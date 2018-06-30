@@ -3,6 +3,7 @@ The student-directory script allows you to manage the of students enrolled at Vi
 
 ## How to use ## 
 
-```shell
+```
+shell
 ruby directory.rb 
 ####
