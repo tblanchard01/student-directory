@@ -1,5 +1,5 @@
 #all students into hashes 
-=begin
+
 def input_students
   puts "Please enter the name of a student"
   name = gets.chomp
@@ -21,20 +21,7 @@ def input_students
   #return students
   students
 end 
-=end 
-
-students = [
-             {name: "Tim", cohort: :July}, 
-             {name: "Angela", cohort: :July},
-             {name: "Dan", cohort: :July},
-             {name: "Jen", cohort: :June}, 
-             {name: "Solo", cohort: :June},
-             {name: "Angus", cohort: :June},
-             {name: "Anna", cohort: :April}, 
-             {name: "Steve", cohort: :April},
-             {name: "Kerry", cohort: :April},
-          ]
-
+ 
 def print_header
   puts "The students of Villains Academy"
   puts "-------------"
@@ -53,6 +40,8 @@ def print_footer(names)
 end 
 
 students_by_cohort_hash = {}
+
+students = input_students
 
 students.each { |line|
   #sets up hash key/values as variables
