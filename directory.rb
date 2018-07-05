@@ -39,7 +39,7 @@ def print_footer(names)
 end 
 =begin
 students_by_cohort_hash = {}
-students.each { |line|
+@students.each { |line|
   #sets up hash key/values as variables
   student_name = line[:name]
   student_cohort = line[:cohort]
