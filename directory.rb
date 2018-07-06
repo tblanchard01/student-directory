@@ -1,4 +1,3 @@
-#next is to save to file etc 
 @students = []
 def input_students
   puts "Please enter the name of a student"
@@ -86,6 +85,7 @@ def interactive_menu
 end
 
 interactive_menu
+
 
 =begin
 #sets up a hash displaying students grouped by cohort
