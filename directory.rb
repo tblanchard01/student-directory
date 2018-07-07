@@ -1,4 +1,9 @@
 @students = []
+
+def add_students_to_list(list_name, list_cohort) #pushes name and cohort to students array
+  @students << {name: list_name, cohort: list_cohort.to_sym}
+end 
+
 def input_students
   puts "Please enter the name of a student"
   name = STDIN.gets.chomp
@@ -8,7 +13,7 @@ def input_students
   # create an empty array
   #get first name
    while !(name.empty? and cohort.empty?) do 
-    @students << {name: name, cohort: cohort.to_sym}
+     add_students_to_list(name, cohort)
     @students.count == 1? (puts "Now we have 1 student") : (puts "Now we have #{@students.count} students")
     #get another name 
     puts "Please enter another name"
@@ -51,7 +56,7 @@ def load_students(filename = "students.csv")
 file = File.open(filename, "r")
 file.readlines.each do |line| 
 name, cohort = line.chomp.split(",")
- @students << {name: name, cohort: cohort.to_sym}
+add_students_to_list(name, cohort)
                     end 
 end 
 
@@ -107,6 +112,7 @@ def interactive_menu
   end
 end
 
+try_load_students
 interactive_menu
 
 =begin
@@ -123,3 +129,4 @@ students_by_cohort_hash = {}
  end 
              }
 =end 
+
