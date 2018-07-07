@@ -8,7 +8,7 @@ def input_students
   # create an empty array
   #get first name
    while !(name.empty? and cohort.empty?) do 
-    @students << {name: name, cohort: cohort}
+    @students << {name: name, cohort: cohort.to_sym}
     @students.count == 1? (puts "Now we have 1 student") : (puts "Now we have #{@students.count} students")
     #get another name 
     puts "Please enter another name"
