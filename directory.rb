@@ -43,21 +43,27 @@ def print_footer
 end 
 
 def save_students 
-  file = File.open("students.csv", "w")
+  puts "Please provide file name"
+  file_name = gets.chomp.strip
+  file = File.open("#{file_name}.csv", "w")
   @students.each do |student| 
   student_data = [student[:name], student[:cohort]]
   csv_line = student_data.join(",")
   file.puts csv_line
                 end 
   file.close 
+  puts "students saved successfully!"
 end 
 
-def load_students(filename = "students.csv")
+def load_students
+  puts "please enter the file which you wish to load the students from"
+  filename = gets.chomp.strip
 file = File.open(filename, "r")
 file.readlines.each do |line| 
 name, cohort = line.chomp.split(",")
 add_students_to_list(name, cohort)
                     end 
+puts "Students loaded!"
 end 
 
 def try_load_students
@@ -77,8 +83,8 @@ def print_menu
 #print the menu and ask the user what to do
   puts "1. Input the students"
   puts "2. Show the students"
-  puts "3. Save list to students.csv"
-  puts "4. Load the list from students.csv"
+  puts "3. Save list to file"
+  puts "4. Load the list from file"
   puts "9. Exit" # 9 because we'll be adding more items
 end 
 
