@@ -43,20 +43,20 @@ def print_footer
 end 
 
 def save_students 
-  puts "Please provide file name"
+  puts "Please provide file name, file will be saved in .csv format"
   file_name = gets.chomp.strip
-  file = File.open("#{file_name}.csv", "w")
+  # File.open(yourfile, 'w') { |file| file.write("your text") }
+
+  File.open("#{file_name}.csv", "w") do |f|
   @students.each do |student| 
   student_data = [student[:name], student[:cohort]]
-  csv_line = student_data.join(",")
-  file.puts csv_line
-                end 
-  file.close 
+ f.puts student_data.join(",")
+                end                   end 
   puts "students saved successfully!"
 end 
 
 def load_students
-  puts "please enter the file which you wish to load the students from"
+  puts "please enter the file which you wish to load the students from, remember to include .csv!"
   filename = gets.chomp.strip
 file = File.open(filename, "r")
 file.readlines.each do |line| 
